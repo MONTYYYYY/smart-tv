@@ -2,6 +2,41 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Notes
+
+
+- Topic categories - sorted By Title
+
+### Style considerations
+- Removed the default scroll bar indicator and made it hidden.
+-  Smooth transition animation when scrolling.
+- Reset horizontal Scroll position when a new topic is selected. 
+
+### Improving Performance
+- (Lazy Loading on Grids) displayed thumb image is displayed before the regular image size is loaded. Regular image appears only when image comes into the viewport.
+
+### User Experience - Suspense component
+- Show loading indicator before the component is mounted.
+- Lazy loading of page components
+
+Fetching of topics data - Needs to be concurrent using promise All, which is faster than hitting the photo’s endpoints sequentially.
+
+### Persisted data 
+The app used URL params to persist data when the page is reloaded.
+
+### Sound Effects 
+
+Sound effects are triggered when a grid item is clicked or next/previous pagination buttons of grid is clicked.
+
+### Additional Components
+
+‘Exit Grid view’ button, this will allow user to switch make to Menu active state. User needs to have ability to navigate back and forth.
+
+Image Info component is displayed over each image. This component displays the information about each artwork.
+
+###Future Improvements
+Voice search , since modern smart tv allow for microphone capabilities. It would make give the user an alternative way to interact with the smart tv app.
+
 ## Available Scripts
 
 In the project directory, you can run:
