@@ -34,7 +34,7 @@ Sound effects are triggered when a grid item is clicked or next/previous paginat
 
 Image Info component is displayed over each image. This component displays the information about each artwork.
 
-###Future Improvements
+### Future Improvements
 Voice search , since modern smart tv allow for microphone capabilities. It would make give the user an alternative way to interact with the smart tv app.
 
 ## Available Scripts
