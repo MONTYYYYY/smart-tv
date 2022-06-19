@@ -34,7 +34,7 @@ Sound effects are triggered when a grid item is clicked or next/previous paginat
 
 ‘Exit Grid view’ button, this will allow user to switch make to Menu active state. User needs to have ability to navigate back and forth.
 
-Image Info component is displayed over each image. This component displays the information about each artwork.
+Image Info component is displayed over each image. This component displays the information about each artwork. This only becomes visible when the 'Show Grid info' control button is clicked when Grid is in active state.
 
 ### Future Improvements
 Voice search , since modern smart tv allow for microphone capabilities. It would make give the user an alternative way to interact with the smart tv app.
