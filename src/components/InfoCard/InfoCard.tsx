@@ -37,11 +37,13 @@ function InfoCard({ photo, visible }: InfoCardProps) {
           Created:
           {formatDate(createdAt)}
         </p>
-        <div className="center-child-items">
+        <div className="user-info">
           <InfoCardStyles.ProfileImage src={user.profile_image.small} alt={user.name} />
           <b>{photo.user.name}</b>
           {' '}
+          (
           {photo.user.username}
+          )
         </div>
       </div>
 

@@ -12,6 +12,13 @@ const Container = styled.div`
     overflow-y: auto;
     overflow: hidden;
 
+    .user-info {
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 5px;
+    }
+
     &.elementToFadeIn {
         animation: fadeInAnimation ease 3s;
         animation-iteration-count: 1;

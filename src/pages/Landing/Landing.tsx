@@ -36,6 +36,9 @@ function Landing() {
   const isLoaded = photosLoadingStatus === Status.Idle && topicsLoadingStatus === Status.Idle;
   const dispatch = useAppDispatch();
 
+  // Each row in a grid has to have same number of items.
+  const maxItemsPerRow = Math.ceil((photos[slug] ?? []).length / 2);
+
   const scroll = (ref : React.MutableRefObject<any>, scrollOffset: number) => {
     ref.current.scrollLeft += scrollOffset;
   };
@@ -76,6 +79,7 @@ function Landing() {
     }
   }, [isGridActive]);
 
+  // This is an approximation.
   const getOffsetValue = () => (gridParentContainerRef?.current?.clientWidth as number || 0) * 0.31;
 
   const next = () => {
@@ -102,13 +106,13 @@ function Landing() {
       )}
       <LandingStyles.GridParentContainer ref={gridParentContainerRef}>
         <GridSlider
-          photos={photos[slug]}
+          photos={photos[slug]?.slice(0, maxItemsPerRow)}
           ref={gridTopContainerRef}
           selectedGridItem={selectedGridItem}
           setSelectedGridItem={setSelectedGridItem}
         />
         <GridSlider
-          photos={photos[slug]}
+          photos={photos[slug]?.slice(maxItemsPerRow)}
           ref={gridBottomContainerRef}
           selectedGridItem={selectedGridItem}
           setSelectedGridItem={setSelectedGridItem}

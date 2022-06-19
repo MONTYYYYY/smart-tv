@@ -7,6 +7,9 @@ import { RootState } from '../store';
 import { sortBy } from '../../helpers/arrays';
 
 export type ILoadStatus = 'idle' | 'loading' | 'failed';
+const AuthorizationKey = 'Client-ID';
+
+// Api documentation : https://unsplash.com/documentation#list-photos
 
 /* eslint-disable no-unused-vars */
 export enum Status {
@@ -44,7 +47,7 @@ export const fetchTopics = createAsyncThunk(
     await APP_URL.get(
       '/topics',
       {
-        headers: { Authorization: `Client-ID ${ACCESS_KEY}` },
+        headers: { Authorization: `${AuthorizationKey} ${ACCESS_KEY}` },
       },
     )
       .then((res) => {
@@ -56,7 +59,7 @@ export const fetchTopics = createAsyncThunk(
     return response;
   },
 );
-// Authorization: Client-ID YOUR_ACCESS_KEY
+
 export const fetchRelatedTopics = createAsyncThunk(
   'topics/fetchRelatedTopics',
   async (topicName : string) => {
@@ -64,7 +67,7 @@ export const fetchRelatedTopics = createAsyncThunk(
     await APP_URL.get(
       `/topics/${topicName}/photos`,
       {
-        headers: { Authorization: `Client-ID ${ACCESS_KEY}` },
+        headers: { Authorization: `${AuthorizationKey} ${ACCESS_KEY}` },
       },
     )
       .then((res) => {
@@ -81,10 +84,15 @@ export const fetchRelatedTopicsConcurrent = createAsyncThunk(
   'topics/fetchRelatedTopics',
   async (topicSlug : string[]) => {
     const response:IPhotos = {};
+    const params = {
+      per_page: 14,
+      order_by: 'latest',
+    };
     const photosUrls = topicSlug.map((slug) => APP_URL.get(
       `/topics/${slug}/photos`,
       {
-        headers: { Authorization: `Client-ID ${ACCESS_KEY}` },
+        headers: { Authorization: `${AuthorizationKey} ${ACCESS_KEY}` },
+        params,
       },
     ));
     await Promise.all(photosUrls).then((res) => {

@@ -24,7 +24,7 @@ const ToggleShowPhotosInfoContainer = styled.button`
     height: 25px;
     border-radius: 0px 0px 10px 10px;
     top: 0;
-    left: 55%;
+    left: 56%;
     z-index: 100;
     background: black;
     color: white;
