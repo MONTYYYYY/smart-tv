@@ -23,7 +23,7 @@ function Photo({ photo, selectedGridItem, setSelectedGridItem } :IPhotoProps) {
     play();
   };
   return (
-    <PhotoStyles.Container className={selectedGridItem === photo?.id ? 'selected' : ''} onClick={handlePhotoClick}>
+    <PhotoStyles.Container className={`photo-image-container ${selectedGridItem === photo?.id ? 'selected' : ''}`} onClick={handlePhotoClick}>
       <InfoCard photo={photo} visible={isPhotosInfoDisplayed} />
       <LazyImage
         placeholder={photo?.urls.thumb}
@@ -31,6 +31,7 @@ function Photo({ photo, selectedGridItem, setSelectedGridItem } :IPhotoProps) {
       >
         {(src : string, loading : boolean) => (
           <PhotoStyles.PhotoImage
+            className="photo-image"
             src={src}
             alt={photo?.alt_description || photo?.description}
             isLoading={loading}

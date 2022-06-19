@@ -36,6 +36,10 @@ Sound effects are triggered when a grid item is clicked or next/previous paginat
 
 Image Info component is displayed over each image. This component displays the information about each artwork.
 
+### Testing 
+
+Added Cypress Tests with 14 e2e tests.
+
 ### Future Improvements
 Voice search , since modern smart tv allow for microphone capabilities. It would make give the user an alternative way to interact with the smart tv app.
 
@@ -81,3 +85,14 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+### `yarn e2e`
+
+Runs and executes the Cypress Tests with Cypress GUI
+### `yarn cypress:open`
+
+Opens the Cypress GUI
+
+### `yarn cypress:run`
+
+Runs Cypress CLI

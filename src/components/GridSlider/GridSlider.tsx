@@ -19,7 +19,7 @@ const GridSlider = React.forwardRef((props : IGridSliderProps, ref:any) => {
   };
 
   return (
-    <GridSliderStyles.GridContainer ref={ref} onClick={handleContainerClick}>
+    <GridSliderStyles.GridContainer className=".grid-slider" ref={ref} onClick={handleContainerClick}>
       {
           photos?.map((photo: IPhoto) => (
             <Photo

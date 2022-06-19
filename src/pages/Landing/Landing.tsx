@@ -95,16 +95,16 @@ function Landing() {
   };
 
   return (
-    <LandingStyles.Container>
+    <LandingStyles.Container className="page-container">
       { isGridActive && (
         <>
           <GridControls />
-          <LandingStyles.PreviousPaginationContainer onClick={previous} className="center-child-items">
+          <LandingStyles.PreviousPaginationContainer onClick={previous} className="pagination-control center-child-items">
             <LandingStyles.TriangleLeft />
           </LandingStyles.PreviousPaginationContainer>
         </>
       )}
-      <LandingStyles.GridParentContainer ref={gridParentContainerRef}>
+      <LandingStyles.GridParentContainer id="grid" ref={gridParentContainerRef}>
         <GridSlider
           photos={photos[slug]?.slice(0, maxItemsPerRow)}
           ref={gridTopContainerRef}
@@ -118,7 +118,7 @@ function Landing() {
           setSelectedGridItem={setSelectedGridItem}
         />
         {isGridActive && (
-        <LandingStyles.NextPaginationContainer onClick={next} className="center-child-items">
+        <LandingStyles.NextPaginationContainer onClick={next} className="pagination-control center-child-items">
           <LandingStyles.TriangleRight />
         </LandingStyles.NextPaginationContainer>
         )}

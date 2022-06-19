@@ -20,8 +20,8 @@ function Menu() {
   };
 
   return (
-    <MenuContainer flexDirection="column">
-      <MenuListContainer>
+    <MenuContainer id="menu" flexDirection="column">
+      <MenuListContainer id="menuList">
         {topics?.map((topic) => {
           const active = selectedTopicSlug === topic.slug;
           return (

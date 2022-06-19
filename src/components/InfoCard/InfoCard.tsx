@@ -15,7 +15,7 @@ function InfoCard({ photo, visible }: InfoCardProps) {
     user,
   } = photo;
   return (
-    <InfoCardStyles.Container className={`${visible ? 'elementToFadeIn' : 'elementToFadeOut'} backdrop-blur`}>
+    <InfoCardStyles.Container className={`info-card-container ${visible ? 'elementToFadeIn' : 'elementToFadeOut'} backdrop-blur`}>
       <div>
         <p>
           {description && (

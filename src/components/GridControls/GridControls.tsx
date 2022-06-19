@@ -16,14 +16,24 @@ function GridControls() {
 
   return (
     <>
-      <GridControlsStyles.ExitGridViewContainer type="button" onClick={handleExitGridViewButtonClick}>
+      <GridControlsStyles.ExitGridViewContainer
+        id="exitGridControl"
+        className="grid-control-item"
+        type="button"
+        onClick={handleExitGridViewButtonClick}
+      >
         <b>Exit Grid View</b>
       </GridControlsStyles.ExitGridViewContainer>
-      <GridControlsStyles.ToggleShowPhotosInfoContainer type="button" onClick={handleToggleShowPhotosInfoClick}>
+      <GridControlsStyles.ToggleShowPhotosInfoContainer
+        id="toggleShowInfoDisplayControl"
+        className="grid-control-item"
+        type="button"
+        onClick={handleToggleShowPhotosInfoClick}
+      >
         <b>
           {isPhotosInfoDisplayed ? 'Hide' : 'Show'}
           {' '}
-          Grid Info
+          Photo Info
         </b>
       </GridControlsStyles.ToggleShowPhotosInfoContainer>
     </>
