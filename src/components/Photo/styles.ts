@@ -27,7 +27,7 @@ const PhotoImage = styled.img<IPhotoImageProps>`
     height: 100%;
     width: 100%;
     transition: all 0.25s ease;
-    opacity: ${(props) => (props.isLoading ? 0.2 : 1)};
+    opacity: ${(props) => (props.isLoading ? 0.4 : 1)};
 `;
 
 const PhotoStyles = {
